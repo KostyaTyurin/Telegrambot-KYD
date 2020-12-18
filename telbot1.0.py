@@ -2,7 +2,6 @@ import telebot
 import pandas as pd
 import numpy as np
 from telebot import types
-import random
 
 frame = pd.read_excel('kachan.xls', header=0)
 M = np.array(frame)
@@ -44,7 +43,7 @@ def lalala(message):
             but2 = types.KeyboardButton('Материал для учебы')
             keyboard.add(but1, but2)
 
-            bot.send_message(message.chat.id, 'Что вас интересует? ', reply_markup=keyboard)
+            bot.send_message(message.chat.id, 'Что вас интересует? ', reply_markup = keyboard)
         elif message.text == 'Качественные реакции':
             keys = types.ReplyKeyboardMarkup(resize_keyboard=True)
 
@@ -59,7 +58,7 @@ def lalala(message):
             item_home = types.KeyboardButton('В начало')
 
             keys.add(item1, item2, item3, item4, item5, item6, item7, item8, item_home)
-            bot.send_message(message.chat.id, 'выбери группу ', reply_markup=keys)
+            bot.send_message(message.chat.id, 'выбери группу ', reply_markup = keys)
 
         elif message.text == 'Материал для учебы':
             file_1 = open('Tretyakov_1_tom.pdf', 'rb')
@@ -81,7 +80,7 @@ def lalala(message):
             item5 = types.InlineKeyboardButton("Ag", callback_data='Ag')
 
             markup.add(item1, item2, item3, item4, item5)
-            bot.send_message(message.chat.id, 'Выбери элемент ', reply_markup=markup)
+            bot.send_message(message.chat.id, 'Выбери элемент ', reply_markup = markup)
 
         elif message.text == 'II':
             markup = types.InlineKeyboardMarkup(row_width=3)
@@ -94,13 +93,13 @@ def lalala(message):
             item7 = types.InlineKeyboardButton('Cd', callback_data='Cd')
             markup.add(item1, item2, item3, item4, item5, item6, item7)
 
-            bot.send_message(message.chat.id, 'Выбери элемент ', reply_markup=markup)
+            bot.send_message(message.chat.id, 'Выбери элемент ', reply_markup = markup)
 
         elif message.text == 'III':
             markup = types.InlineKeyboardMarkup(row_width=3)
             item1 = types.InlineKeyboardButton('Al', callback_data='Al')
             markup.add(item1)
-            bot.send_message(message.chat.id, 'Выбери элемент ', reply_markup=markup)
+            bot.send_message(message.chat.id, 'Выбери элемент ', reply_markup = markup)
         elif message.text == 'IV':
             markup = types.InlineKeyboardMarkup(row_width=3)
             item1 = types.InlineKeyboardButton('Sn', callback_data='Sn')
@@ -108,7 +107,7 @@ def lalala(message):
             item3 = types.InlineKeyboardButton('C', callback_data='CO3')
             item4 = types.InlineKeyboardButton('Si', callback_data='SiO3')
             markup.add(item1, item2, item3, item4)
-            bot.send_message(message.chat.id, 'Выбери элемент ', reply_markup=markup)
+            bot.send_message(message.chat.id, 'Выбери элемент ', reply_markup = markup)
 
         elif message.text == 'V':
             markup = types.InlineKeyboardMarkup(row_width=3)
@@ -122,14 +121,14 @@ def lalala(message):
             markup = types.InlineKeyboardMarkup(row_width=3)
             item1 = types.InlineKeyboardButton('SO4', callback_data='SO4')
             markup.add(item1)
-            bot.send_message(message.chat.id, 'Выбери элемент ', reply_markup=markup)
+            bot.send_message(message.chat.id, 'Выбери элемент ', reply_markup = markup)
 
         elif message.text == 'VII':
             markup = types.InlineKeyboardMarkup(row_width=3)
             item1 = types.InlineKeyboardButton('I', callback_data='I')
             item2 = types.InlineKeyboardButton('Cl', callback_data='Cl')
             item3 = types.InlineKeyboardButton('Br', callback_data='Br')
-            item4 = types.InlineKeyboardButton('IO3', callback_data='IO3')
+            item4 = types.InlineKeyboardButton('IO\u00b3', callback_data='IO3')
 
             markup.add(item1, item2, item3, item4)
             bot.send_message(message.chat.id, 'Выбери элемент ', reply_markup=markup)

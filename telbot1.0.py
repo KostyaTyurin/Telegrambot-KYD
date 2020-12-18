@@ -12,14 +12,6 @@ bot = telebot.TeleBot(Token)
 
 @bot.message_handler(commands=['start'])
 def welcome(message):
-    # keyboard
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-
-    item1 = types.KeyboardButton('I')
-    item2 = types.KeyboardButton('II')
-    item_home = types.KeyboardButton('В начало')
-
-    markup.add(item1, item2, item_home)
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
 
     but1 = types.KeyboardButton('Качественные реакции')
@@ -31,6 +23,14 @@ def welcome(message):
                          message.from_user, bot.get_me()),
                      parse_mode='html')
     bot.send_message(message.chat.id, 'Что вас интересует? ', reply_markup=keyboard)
+
+
+@bot.message_handler(commands=['help'])
+def heeelp(message):
+    bot.send_message(message.chat.id,
+                     "Не тупиии!!!")
+
+
 
 
 @bot.message_handler(content_types=['text'])
